@@ -1,0 +1,11 @@
+
+
+<div class="container playlists-container">
+  <mat-card class="col-" *ngFor="let playlist of playlists$ | async">
+    <button mat-icon-button (click)="selectPlaylist(playlist.id)"> <mat-icon>exit_to_app</mat-icon></button>
+    <mat-card-title>{{playlist.name}}</mat-card-title>
+    <mat-card-content>
+      <img [src]="playlist.images[0].url" alt="">
+    </mat-card-content>
+  </mat-card>
+</div>

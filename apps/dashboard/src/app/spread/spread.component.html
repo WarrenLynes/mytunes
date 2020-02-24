@@ -1,0 +1,24 @@
+
+<div class="container spread-container">
+  <h1 class="full-width">Liked Songs</h1>
+  <mat-card class="col-" *ngFor="let song of songs$ | async">
+
+    <mat-card-title>
+      {{song.name}}
+    </mat-card-title>
+    <mat-card-content>
+      <img [src]="song.album['images'][1].url" alt="">
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+      <mat-menu #menu>
+        <button mat-menu-item [matMenuTriggerFor]="playlists"> add to playlistl </button>
+      </mat-menu>
+
+      <mat-menu #playlists="matMenu">
+        <button mat-menu-item *ngFor="let playlist of playlists$ | async" (click)="addToPlaylist(playlist.id, song.id)">{{playlist.name}}</button>
+      </mat-menu>
+    </mat-card-actions>
+  </mat-card>
+</div>

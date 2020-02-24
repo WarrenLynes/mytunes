@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tunes/material": ["libs/material/src/index.ts"],
+      "@tunes/ui": ["libs/ui/src/index.ts"],
+      "@tunes/core-state": ["libs/core-state/src/index.ts"],
+      "@tunes/core-data": ["libs/core-data/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

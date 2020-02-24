@@ -1,0 +1,41 @@
+<div class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1> LOGIN </h1>
+      </mat-card-title>
+
+    </mat-card-header>
+    <form (submit)="submit()" [formGroup]="loginForm">
+      <mat-card-content>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" formControlName="email" type="email" name="email">
+          <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginForm.controls['email'].hasError('email')">Email must be valid</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Name" formControlName="name" type="text" name="name">
+          <mat-error *ngIf="loginForm.controls['name'].hasError('required')">Name is required</mat-error>
+          <mat-error *ngIf="loginForm.controls['name'].hasError('minLength')">Name must be 3 chars long</mat-error>
+          <mat-error *ngIf="loginForm.controls['name'].hasError('maxLength')">Name must be 10 chars or less</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Password" formControlName="password" type="text" name="password">
+          <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password is required</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('minLength')">Password must be 8 chars long</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')">Password must be 10 chars or less</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasNumber')">Password must contain a number</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasCapitalCase')">Password must contain a capital letter</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('hasSmallCase')">Password must contain a lower case letter</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button type="submit" mat-button color="primary" [disabled]="loginForm.invalid">give it a whirl</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,52 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" closed class="app-sidenav">
+    <ng-template #notAuthenticatedNav>
+      <nav>
+        <button color="primary"
+                class="nav-link"
+                mat-button
+                (click)="onAuthenticate()"
+        >authenticate</button>
+      </nav>
+    </ng-template>
+    <nav *ngIf="authenticated$ | async; else notAuthenticatedNav">
+      <a mat-button
+         color="primary"
+         class="nav-link"
+         *ngFor="let link of links"
+         (click)="sidenav.toggle();"
+         [routerLink]="link.path" routerLinkActive="active"
+      >
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span class="link-title">{{link.title}}</span>
+      </a>
+
+      <div class="spacer"></div>
+
+      <button
+        mat-button
+        full-width
+        class="nav-link"
+        color="primary"
+        (click)="onLogout(); sidenav.toggle();"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="link-title">logout</span>
+      </button>
+    </nav>
+  </mat-sidenav>
+
+  <mat-progress-bar *ngIf="loading" class="songs-progress app-progress-bar" color="accent" mode="indeterminate"></mat-progress-bar>
+
+  <mat-toolbar color="primary" class="mat-elevation-z4 app-toolbar" >
+  <span>
+    <button mat-mini-fab color="accent" (click)="sidenav.toggle();">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </span>
+  </mat-toolbar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

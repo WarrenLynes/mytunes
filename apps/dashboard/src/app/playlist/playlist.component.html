@@ -1,0 +1,35 @@
+
+
+<div class="container playlist-container">
+  <div class="col- full-width">
+    <h1>{{(playlist$ | async)?.name}}</h1>
+  </div>
+  <div class="col-">
+    <img [src]="(playlist$ | async)?.images[0].url" alt="">
+  </div>
+  <div class="col- full-width">
+    <mat-list>
+      <mat-list-item *ngFor="let track of tracks$ | async" style="height: auto; border: none; margin: 10px 0;">
+        <div class="container list-contents full-width">
+          <img [src]="track.track.album.images[2].url">
+          <span class="track-name">{{track.track.name}}</span>
+          <div class="artists">
+          <span class="full-width" *ngFor="let artist of track.track.artists">
+            {{artist.name}}
+          </span>
+          </div>
+
+          <div class="actions">
+            <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #menu>
+              <button mat-menu-item color="warn"> remove from playlist </button>
+            </mat-menu>
+            <button mat-icon-button color="primary">
+              <mat-icon>play_circle_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

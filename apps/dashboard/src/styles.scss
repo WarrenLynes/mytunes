@@ -1,0 +1,263 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mdv1-root {
+  margin: 0!important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  display: flex;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+p {
+  margin: 16px;
+}
+
+
+[md-raised-button] {
+  width: 100%;
+}
+
+md-grid-list {
+  max-width: 1403px;
+  margin: 16px;
+}
+
+md-sidenav-layout {
+  height: 100vh;
+}
+
+md-sidenav {
+  width: 200px;
+}
+
+md-sidenav a {
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 47px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 0 16px;
+  position: relative;
+}
+
+.icon-20 {
+  font-size: 20px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.container [class*='col-'] {
+  padding: 10px;
+}
+
+md-card-header .mat-card-header-text {
+  margin-left: 0;
+  border-bottom: 1px solid #ffd740;
+}
+
+md-card-title h1 {
+  display: inline;
+}
+
+.header {
+  padding-bottom: 10px;
+  color: #673ab7;
+  border-bottom: 2px solid #673ab7;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+mat-toolbar {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+  0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+mat-sidenav {
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  width: 200px;
+}
+
+mat-card:not(.dashboard-card) {
+  margin-bottom: 20px;
+}
+
+.mat-sidenav-container {
+  background: #f5f5f5;
+  flex: 1;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.dashboard-card {
+  position: absolute !important;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  mat-card-header {
+    justify-content: center;
+  }
+}
+
+.mat-card {
+  background: #2f2f2f!important;
+  .mat-card-content {
+    text-align: center;
+  }
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.grid-container {
+  margin: 20px;
+}
+
+.list-container {
+  margin: 20px;
+  .full-width-table {
+    width: 100%;
+  }
+  tr {
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    -ms-transition: background-color 300ms;
+    -o-transition: background-color 300ms;
+    transition: background-color 300ms;
+  }
+  tr:not(.mat-header-row):hover {
+    background: whitesmoke;
+    cursor: pointer;
+  }
+}
+
+.details-container {
+  mat-form-field {
+    width: 100%;
+  }
+  mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+mat-list-item:not(:first-of-type) {
+  border-top: 1px solid #efefef;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-list-item:hover {
+  cursor: pointer;
+  background: #0b0b0b;
+}
+
+mat-list-item:not(:first-of-type) {
+  border-top: 1px solid #efefef;
+}
+
+.symbol {
+  color: #777;
+}
+
+mat-card-actions {
+  margin-bottom: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.54);
+  display: flex !important;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+// UI TOOLBAR
+mat-toolbar {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+  0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  z-index: 900;
+  > .mat-mini-fab {
+    margin-right: 10px;
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .title {
+    vertical-align: middle;
+  }
+  .logo {
+    margin-left: 20px;
+    img {
+      vertical-align: middle;
+      width: 100px;
+      height: auto;
+    }
+  }
+}
+
+
+.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+  background-color: #00ff58 !important;
+}
+.mat-progress-bar-buffer {
+  background-color: #212121 !important;
+}
+
+.mat-progress-bar.app-progress-bar {
+  position: fixed!important;
+  bottom: 0!important;
+  .mat-progress-bar-buffer {
+    background-color: #00ff78 !important;
+  }
+}

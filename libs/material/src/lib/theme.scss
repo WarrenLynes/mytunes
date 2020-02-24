@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$coolguys-app-primary: mat-palette($mat-green, A400);
+$coolguys-app-accent:  mat-palette($mat-grey, 900);
+$coolguys-app-warn:    mat-palette($mat-red);
+$coolguys-app-background-color: map_get($mat-grey, 900);
+
+$theme: mat-dark-theme($coolguys-app-primary, $coolguys-app-accent, $coolguys-app-warn);
+
+$background: map-get($theme, background);
+$background: map_merge($background, (background: $coolguys-app-background-color));
+$theme: map_merge($theme, (background: $background));
+
+@include angular-material-theme($theme);
+.mat-app-background {
+  background-color: #24292e!important;
+}
